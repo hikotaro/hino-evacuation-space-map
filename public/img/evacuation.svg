@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- 背景の円（緑色は避難誘導の標準色） -->
+  <circle cx="32" cy="32" r="30" fill="#009933" stroke="#FFFFFF" stroke-width="2"/>
+  
+  <!-- 走る人のピクトグラム（白） -->
+  <!-- 頭 -->
+  <circle cx="36" cy="16" r="6" fill="#FFFFFF" />
+  <!-- 胴体 -->
+  <path d="M26 24 L42 26 L38 40 L24 38 Z" fill="#FFFFFF" />
+  <!-- 腕 -->
+  <path d="M40 26 L52 18" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" />
+  <path d="M26 24 L16 30" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" />
+  <!-- 足 -->
+  <path d="M38 40 L48 52" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" />
+  <path d="M24 38 L16 48" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" />
+</svg>
