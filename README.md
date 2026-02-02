@@ -1,15 +1,15 @@
-# 日野市文化財マップ (Hino City Park Map)
-日野市内の公園を地図上で閲覧できるインタラクティブなWebマップです。 Leaflet.jsを使用し、日野市のオープンデータを可視化しています。公園の場所、設備や遊具を確認することができます。
+# 日野市緊急避難場所マップ (Hino City Park Map)
+日野市内の緊急避難場所を地図上で閲覧できるインタラクティブなWebマップです。 Leaflet.jsを使用し、日野市のオープンデータを可視化しています。住所や連絡先を確認することができます。
 
 ## 🌐 デモ (Demo)
-• 公開URL: [日野市公園マップ](https://hino-park-map.web.app/)  
+• 公開URL: [日野市緊急避難場所マップ](https://hino-evacuation-space-map.web.app/)  
   　
 ## ✨ 特徴 (Features)
-+ 公園の可視化: 市内の公園を地図上にピンで表示。
-+ 詳細情報の表示: ピンをクリックすると、設備、住所がポップアップ表示されます。
++ 緊急避難場所の可視化: 市内の緊急避難場所を地図上にピンで表示。
++ 詳細情報の表示: ピンをクリックすると、住所や連絡先がポップアップ表示されます。
 + クラスタリング機能: 「高幡不動駅」周辺など、ピンが密集している地域では自動的にグループ化（クラスタリング）され、地図が見やすくなっています。
 + 現在地表示: GPS機能を使用し、現在地周辺の文化財を探すことができます。
-+ データ分離設計: 地図データは data.geojson として独立しており、データの追加・修正が容易です。  
++ データ分離設計: 地図データは evacutation_spaces.geojson として独立しており、データの追加・修正が容易です。  
   　
 ## 🛠 使用技術 (Tech Stack)
 + HTML5 / CSS3
@@ -23,7 +23,7 @@
 ソースコードの構成はシンプルに保たれています。  
 .  
 ├── index.html      # メインの地図アプリ（Leafletの読み込みとロジック）  
-├── parks.geojson    # 地図のデータファイル（緯度経度、名称、設備など）  
+├── evacutation_spaces.geojson    # 地図のデータファイル（緯度経度、名称、設備など）  
 ├── firebase.json   # Firebase Hostingの設定ファイル  
 ├── .gitignore      # Git管理除外設定  
 └── README.md       # プロジェクトの説明書（本ファイル）  
@@ -40,8 +40,8 @@ firebase emulators:start --only hosting
 Visual Studio Codeの拡張機能「Live Server」などを利用して index.html を開いてください。  
   　
 ## 📊 データの更新方法 (Data Update)
-文化財データを追加・修正する場合は、index.html を編集する必要はありません。 data.geojson ファイルを以下の形式で編集してください。  
-```data.geojson
+データを追加・修正する場合は、index.html を編集する必要はありません。 evacutation_spaces.geojson ファイルを以下の形式で編集してください。  
+```evacutation_spaces.geojson
 {  
   "type": "Feature",  
   "geometry": {  
@@ -50,16 +50,15 @@ Visual Studio Codeの拡張機能「Live Server」などを利用して index.ht
   },  
   "properties": {
     "name": "公園の名前",
-    "type": "種別",
+    "tel": "電話番号",
     "address": "住所",
-    "desc": "設備・遊具",
-    "marker_type": "park"
+    "desc": "避難場所の説明"
   }
 }
 ```
   　
 ## 🌍 データ出典 (Data Source)
-本アプリケーションで使用している文化財データは、以下のオープンデータを利用・加工しています。  
+本アプリケーションで使用している緊急避難場所データは、以下のオープンデータを利用・加工しています。  
 • データ元: 日野市指定文化財一覧  
 • ライセンス: クリエイティブ・コモンズ 表示 4.0 国際 ライセンス (CC BY 4.0)  
   
